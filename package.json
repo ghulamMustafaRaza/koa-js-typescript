@@ -1,0 +1,68 @@
+{
+  "name": "koa-node-proxy_pass-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.ts",
+  "scripts": {
+    "postinstall": "typings install dt~mocha dt~require dt~chai --save --global",
+    "start": "npm run build && node dist/index.js",
+    "test": "mocha  -r ts-node/register  src/**/*.spec.ts",
+    "test:cover": "nyc npm test",
+    "debug": "npm run build && node --inspect dist/index.js",
+    "build": "tsc",
+    "lint": "tslint src/ e2e/"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "kcors": "^2.2.2",
+    "koa": "^2.5.2",
+    "koa-bunyan-logger": "^2.0.0",
+    "koa-json": "^2.0.2",
+    "koa-router": "^7.4.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.4",
+    "@types/mocha": "^2.2.48",
+    "chai": "^4.1.2",
+    "mocha": "^4.1.0",
+    "nyc": "^11.9.0",
+    "pre-commit": "^1.2.2",
+    "sinon": "^4.5.0",
+    "source-map-support": "^0.5.6",
+    "ts-node": "^3.3.0",
+    "tslint": "^5.11.0",
+    "typescript": "^2.9.2",
+    "typings": "^2.1.1"
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=3.8"
+  },
+  "pre-commit": [
+    "test",
+    "build",
+    "lint"
+  ],
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "exclude": [
+      "**/*.d.ts",
+      "**/*.spec.ts",
+      "dist/",
+      "coverage/",
+      "e2e",
+      "docs",
+      "typings"
+    ],
+    "reporter": [
+      "html"
+    ],
+    "all": true
+  }
+}

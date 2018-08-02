@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+
+node_modules/
+coverage/
+typings/
+typings.json
+
+.nyc_output/

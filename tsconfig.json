@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        "target": "es5",
+        "lib": [
+            "es6",
+            "es7",
+            "es2016",
+            "es2017",            
+            "dom"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "sourceMap": true,
+        "noUnusedLocals": true
+    },
+    "include": [
+        "./src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "./src/**/*.spec.ts"
+    ]
+}
